@@ -46,6 +46,7 @@ hr {
 .profilepicture {
   width: 150px;
   height: 150px;
+  border-radius: 50%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
