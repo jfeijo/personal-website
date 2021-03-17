@@ -1,3 +1,53 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 .cloudOne {
   position: absolute;
   right: 300px;
@@ -10,14 +60,10 @@
 }
 .mountain {
   display: inline-block;
-  padding-right: 20px;
 }
 
 .first-container {
-  padding-top: 40px;
-  padding-left: 25%;
-  padding-right: 25%;
-  position: relative;
+
   background-color: #eaf6f6;
   text-align: center;
 }
@@ -46,28 +92,34 @@ hr {
 .profilepicture {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  border-radius: 50%;
+  
 }
 
 .code {
-  width: 25%;
-  float: left;
+  display: flex;
+  width: 35%;
+  /* float: left; */
   margin-right: 30px;
 }
 
 .webdesign {
-  width: 25%;
-  float: right;
+  display: flex;
+  width: 35%;
+  /* float: right; */
   margin-right: 30px;
 }
 
-.skill-container {
+.navbar-light{
+  background-color: #eaf6f6;
 }
-
+.navbar .navbar-toggler{
+  border:0px solid red;
+}
 h3 {
   font-size: 1.5rem;
   position: relative;
@@ -105,7 +157,7 @@ p {
   margin-inline-end: 0px;
   color: #40514e;
 }
- {
+{
   font-family: "Open Sans";
   color: #4f8a8b;
 }
@@ -117,22 +169,17 @@ p {
 .middlecontainer {
   text-align: center;
 }
-.navbar{
-  padding: 0.5rem 0 0.5rem 0;
-}
-.navbar-brand{
-  margin-right: 95%;
-}
 .profile {
   padding-top: 30px;
 }
 
 .bottom-container {
+  /* width: 100vw;
   background-color: #fbd46d;
   height: 50px;
   padding-top: 30px;
   padding-bottom: 30px;
-  font-weight: lighter;
+  font-weight: lighter; */
 }
 a {
   color: #14b1ab;
@@ -150,7 +197,7 @@ a {
   font-weight: 600;
 }
 .aprogrammer {
-  font-weight: normal;
+
 }
 .skill-row {
   width: 50%;
@@ -160,3 +207,102 @@ a {
   line-height: 1.5;
 }
 
+@media(max-width: 900px) {
+  body{
+    font-family: 'Inter', 'sans-serif';
+  }
+  .first-container {
+    width:100vw;
+    
+  }
+  .bottom-container{
+    text-align: center;
+    background-color:#f7f0cbd7;
+    width:100vw;
+    height: 30vh;
+    margin:auto;
+    bottom: 0px;
+    margin-bottom:0px;
+  }
+  .footer-link{
+    color:rgb(66, 153, 252);
+    text-decoration: none;
+    font-weight: 600;
+
+  }
+  #copyright{
+    font-family: 'Inter';
+    padding-top:20px;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+  .skills{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .bottom-container-content{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding:30px
+  }
+  .middle-container{
+    background-color:#f7ffff;
+    margin:auto;
+  }
+  .mountain {
+    /* position: relative; */
+    width: 75vw;
+    margin: auto;
+    display:block;
+  }
+  .cloudOne {
+    display: none;
+  }
+  .cloudTwo {
+    display:none;
+  }
+  
+  .profiletext {
+    width: 70vw;
+    line-height: 1.5;
+    margin: auto;
+  }
+  .sectionTitles{
+    color:#302f2f;
+    padding: 15px;
+    font-family: 'Merriweather';
+    font-weight: inherit;
+  }
+  .aprogrammer{
+    font-family: 'Source Code Pro';
+    text-align:center;
+    top:20px;
+    display:inline-block;
+    line-height: normal;
+    margin: 20px 0 15px 0;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.02em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 110% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    30% { border-color: #FF654C; }
+  }
+
+}
